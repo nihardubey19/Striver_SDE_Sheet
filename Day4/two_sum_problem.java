@@ -33,3 +33,46 @@
         return null;
     }
 
+// ----------------------------------------------
+ 
+    // Using Sorting O(nlogn) 
+
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        int[] temp = new int[n];
+        
+        for(int i=0; i<n; i++){
+            temp[i] = nums[i];
+        }
+        
+        Arrays.sort(nums);
+        
+        int n1=0, n2=0;
+        int left = 0, right = n-1;
+        while(left<right){
+            int sum = nums[left]+nums[right];
+            if(sum==target){
+                n1 = nums[left];
+                n2 = nums[right];
+                break;
+            }else if(sum>target){
+                right--;
+            }else{
+                left++;
+            }
+        }
+        
+        boolean f = false;
+        int[] ans = new int[2];
+        for(int i=0; i<n; i++){
+            if(f==false && temp[i] == n1){
+                ans[0] = i;
+                f = true;
+            }
+            else if(temp[i] == n2){
+                ans[1] = i;
+            }
+        }
+        return ans;
+    }
+
