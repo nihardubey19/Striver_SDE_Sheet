@@ -27,7 +27,7 @@
 
 // --------------------------------------------
 
-    // Using slow and fast pointer
+    // Using Tortoise and Hare Approach
     
     public ListNode middleNode(ListNode head) {
         if(head==null)
