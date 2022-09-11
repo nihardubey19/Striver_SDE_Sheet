@@ -1,5 +1,5 @@
    // Time Complexity : O(2^n)
-   // Space Complexity : O(2^n), Auxilary Space O(n) for recursion
+   // Space Complexity : O(2^n * k), Auxilary Space O(n) for recursion
 
     private List<List<Integer>> ans;
     public List<List<Integer>> subsetsWithDup(int[] nums) {
