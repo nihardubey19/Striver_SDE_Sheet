@@ -1,5 +1,6 @@
     // Using hashMap and Doubly LinkedList
-    // with time Complexity of get and put in Amortized O(1)
+    // with Avergae Time Complexity of get and put in O(1)
+
 class LRUCache {
     Node head = new Node(0,0);
     Node tail = new Node(0,0);
