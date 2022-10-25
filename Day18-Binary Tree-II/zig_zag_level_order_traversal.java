@@ -36,3 +36,41 @@
         }
         return ans;
     }
+
+// -------------------------------------------------------------
+
+    // Time Complexity : O(n)
+    // Space complexity : O(N)
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if(root==null)
+            return ans;
+        return helper(root, ans);
+    }
+
+    private List<List<Integer>> helper(TreeNode root, List<List<Integer>> ans){
+        Deque<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        boolean flag = true;
+
+        while(!q.isEmpty()){
+            int size = q.size();
+            List<Integer> l = new ArrayList<>();
+
+            while(size--!=0){
+                TreeNode curr = q.poll();
+                if(flag==true)
+                    l.add(curr.val);
+                else
+                    l.add(0, curr.val);
+                if(curr.left!=null)
+                    q.add(curr.left);
+                if(curr.right!=null)
+                    q.add(curr.right);
+            }
+            ans.add(l);
+            flag=!flag;
+        }
+        return ans;
+    }
