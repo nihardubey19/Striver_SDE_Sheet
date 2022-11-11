@@ -1,5 +1,5 @@
     // Time Complexity : O(n)
-    // Space Complexity : O(n)
+    // Space Complexity : O(1)
 
     public TreeNode sortedArrayToBST(int[] nums) {
         return helper(0, nums.length-1, nums);
